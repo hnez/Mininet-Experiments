@@ -6,9 +6,9 @@ class BasicTopo(Topo):
         super(BasicTopo, self).__init__(self)
 
         # Add hosts and switches
-        host_arnold = self.addHost('h1', ip="10.0.1.100/24", defaultRoute="10.0.1.1")
-        host_bertha = self.addHost('h2', ip="10.0.2.100/24", defaultRoute="10.0.2.1")
-        host_clyde = self.addHost('h3', ip="10.0.3.100/24", defaultRoute="10.0.3.1")
+        host_arnold = self.addHost('h1', ip="10.0.1.100/24", defaultRoute="via 10.0.1.1")
+        host_bertha = self.addHost('h2', ip="10.0.2.100/24", defaultRoute="via 10.0.2.1")
+        host_clyde = self.addHost('h3', ip="10.0.3.100/24", defaultRoute="via 10.0.3.1")
 
 
         switch_central = self.addSwitch('s1')
