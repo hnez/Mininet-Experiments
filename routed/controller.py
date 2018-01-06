@@ -137,9 +137,9 @@ class RouterPort(object):
         self.backbone.packet_forward(event)
 
     def on_packet_recv(self, event):
-        log.debug('pkg!')
-
         eth_in= event.parsed
+
+        log.debug('Got packet type {} from {} to {} on ofport {}'.format(eth_in.type, eth_in.src, eth_in.dst, event.port))
 
         if eth_in.type == Ethernet.ARP_TYPE:
             self._on_arp_recv(event)
